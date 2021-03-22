@@ -4,7 +4,7 @@
 
 #include "queue.h"
 
-Queue g_queue[QUEUE_SIZE]; // g means gol
+Queue g_queue[QUEUE_SIZE]; // g means global
 
 int g_rear = -1;
 int g_front = -1;
