@@ -40,8 +40,9 @@ void EnQueue(QData data)
         puts("Enqueue error: queue is full");
     else //if not
         CopyQData(&g_queue[++g_rear].data, data);
-    /* Does postfix increacement and g_rear will be increase after CopyQData excuted 
-    because one new element is added to queue and g_rear will point new element which is added to queue(last element of queue)
+    /* Does prefix increacement and g_rear will be increased
+    
+    g_queue will be pointing at the next element which is empty and place that new element will be stored
     
     calls CopyQData to copy data(new element) to queue
     I can just do like : g_queue[++g_rear].data = data but it's less safer than assigning member of structer one-by-one
@@ -55,6 +56,7 @@ void EnQueue(QData data)
     s1 = s2
     
     */
+}
 
 QData DeQueue(void)
 {
@@ -66,9 +68,11 @@ QData DeQueue(void)
     {
         CopyQData(&dequeued_data, g_queue[++g_front].data);
         /* copies dequeued data(first element in queue) to dqueued_data
-        after copyqdata is called, g_front will be increased and It will point first element not dequeued element(first element before dequeue)
-        after calling copyqdata.
+        
+        Does prefix increacement and g_rear will be increased
+        
+        g_rear will be pointing at the element(the first element of queue)  which will be dequeued
+        and copyqdata will copy dequeued element's data to deququed_data*/
     }
-
-    return dequeued_data; //returns dequeued data(data of dequeued element) 
+    return dequeued_data; // returns dequeued_data
 }
