@@ -41,7 +41,7 @@ void EnQueue(QData data)
     else //if not
         CopyQData(&g_queue[++g_rear].data, data);
     /* Does postfix increacement and g_rear will be increase after CopyQData excuted 
-    because one new element is added to queue and g_rear will point new element which is added to queue
+    because one new element is added to queue and g_rear will point new element which is added to queue(last element of queue)
     
     calls CopyQData to copy data(new element) to queue
     I can just do like : g_queue[++g_rear].data = data but it's less safer than assigning member of structer one-by-one
