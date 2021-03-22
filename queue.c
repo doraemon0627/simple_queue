@@ -72,7 +72,7 @@ QData DeQueue(void)
         Does prefix increacement and g_rear will be increased
         
         g_rear will be pointing at the element(the first element of queue)  which will be dequeued
-        and copyqdata will copy dequeued element's data to deququed_data*/
+        and copyqdata will copy dequeued element's data to dequeued_data*/
     }
     return dequeued_data; // returns dequeued_data
 }
